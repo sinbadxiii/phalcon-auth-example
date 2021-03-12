@@ -1,0 +1,14 @@
+{
+    "require": {
+        "sinbadxiii/phalcon-throttle": "dev-master",
+        "sinbadxiii/phalcon-auth": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require-dev": {
+        "phalcon/ide-stubs": "v4.0.0-rc.3"
+    }
+}

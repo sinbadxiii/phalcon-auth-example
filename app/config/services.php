@@ -1,0 +1,178 @@
+<?php
+declare(strict_types=1);
+
+use App\Security\Authenticate;
+use Phalcon\Cache;
+use Phalcon\Cache\AdapterFactory;
+use Phalcon\Escaper;
+use Phalcon\Flash\Direct as Flash;
+use Phalcon\Http\Response\Cookies;
+use Phalcon\Mvc\Dispatcher;
+use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
+use Phalcon\Mvc\View;
+use Phalcon\Mvc\View\Engine\Php as PhpEngine;
+use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
+use Phalcon\Security;
+use Phalcon\Session\Adapter\Stream as SessionAdapter;
+use Phalcon\Session\Manager as SessionManager;
+use Phalcon\Storage\SerializerFactory;
+use Phalcon\Url as UrlResolver;
+use Sinbadxiii\PhalconAuth\Auth;
+
+
+$di->setShared('dispatcher', function () use ($di) {
+
+    $dispatcher = new Dispatcher();
+    $eventsManager = $di->getShared('eventsManager');
+    $eventsManager->attach('dispatch', new Authenticate());
+    $dispatcher->setEventsManager($eventsManager);
+
+    return $dispatcher;
+});
+
+
+/**
+ * Shared configuration service
+ */
+$di->setShared('config', function () {
+    return include APP_PATH . "/config/config.php";
+});
+
+/**
+ * The URL component is used to generate all kind of urls in the application
+ */
+$di->setShared('url', function () {
+    $config = $this->getConfig();
+
+    $url = new UrlResolver();
+    $url->setBaseUri($config->application->baseUri);
+
+    return $url;
+});
+
+/**
+ * Setting up the view component
+ */
+$di->setShared('view', function () {
+    $config = $this->getConfig();
+
+    $view = new View();
+    $view->setDI($this);
+    $view->setViewsDir($config->application->viewsDir);
+
+    $view->registerEngines([
+        '.volt' => function ($view) {
+            $config = $this->getConfig();
+
+            $volt = new VoltEngine($view, $this);
+
+            $volt->setOptions([
+                'path' => $config->application->cacheDir,
+                'separator' => '_'
+            ]);
+
+            return $volt;
+        },
+        '.phtml' => PhpEngine::class
+
+    ]);
+
+    return $view;
+});
+
+/**
+ * Database connection is created based in the parameters defined in the configuration file
+ */
+$di->setShared('db', function () {
+    $config = $this->getConfig();
+
+    $class = 'Phalcon\Db\Adapter\Pdo\\' . $config->database->adapter;
+    $params = [
+        'host'     => $config->database->host,
+        'username' => $config->database->username,
+        'password' => $config->database->password,
+        'dbname'   => $config->database->dbname,
+        'charset'  => $config->database->charset
+    ];
+
+    if ($config->database->adapter == 'Postgresql') {
+        unset($params['charset']);
+    }
+
+    return new $class($params);
+});
+
+
+/**
+ * If the configuration specify the use of metadata adapter use it or use memory otherwise
+ */
+$di->setShared('modelsMetadata', function () {
+    return new MetaDataAdapter();
+});
+
+/**
+ * Register the session flash service with the Twitter Bootstrap classes
+ */
+$di->set('flash', function () {
+    $escaper = new Escaper();
+    $flash = new Flash($escaper);
+    $flash->setImplicitFlush(false);
+    $flash->setCssClasses([
+        'error'   => 'alert alert-danger',
+        'success' => 'alert alert-success',
+        'notice'  => 'alert alert-info',
+        'warning' => 'alert alert-warning'
+    ]);
+
+    return $flash;
+});
+
+/**
+ * Start the session the first time some component request the session service
+ */
+$di->setShared('session', function () {
+    $session = new SessionManager();
+    $files = new SessionAdapter([
+        'savePath' => sys_get_temp_dir(),
+    ]);
+    $session->setAdapter($files);
+    $session->start();
+
+    return $session;
+});
+
+
+
+$di->setShared("cache", function () {
+
+    $configCache = $this->getConfig()->path("cache");
+
+    $serializerFactory = new SerializerFactory();
+    $adapterFactory    = new AdapterFactory($serializerFactory);
+
+    $adapter           = $adapterFactory->newInstance(
+        $configCache->default, $configCache->options->toArray(),
+    );
+
+    return new Cache($adapter);
+});
+
+$di->setShared("auth", function () {
+    return new Auth();
+});
+
+$di->set("security", function ()  use ($di) {
+        $security = new Security();
+        $security->setDI($di);
+        return $security;
+    }
+);
+
+$di->set('cookies', function (){
+        $cookies = new Cookies();
+        $cookies->useEncryption(true);
+        $salt = $this->getConfig()->path('app.key');
+        $cookies->setSignKey($salt);
+        return $cookies;
+    }
+);
