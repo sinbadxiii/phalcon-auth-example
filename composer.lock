@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sinbadxiii/phalcon-auth.git",
-                "reference": "3605cd242ae1ecefc50520f16a0bbabe4bdba8c7"
+                "reference": "de364063fc7dc842330974e4798baa3bcbbd085f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sinbadxiii/phalcon-auth/zipball/3605cd242ae1ecefc50520f16a0bbabe4bdba8c7",
-                "reference": "3605cd242ae1ecefc50520f16a0bbabe4bdba8c7",
+                "url": "https://api.github.com/repos/sinbadxiii/phalcon-auth/zipball/de364063fc7dc842330974e4798baa3bcbbd085f",
+                "reference": "de364063fc7dc842330974e4798baa3bcbbd085f",
                 "shasum": ""
             },
             "require": {
@@ -40,7 +40,7 @@
                     "email": "sinbadxiii@gmail.com"
                 }
             ],
-            "description": "Simple Auth For Phalcon",
+            "description": "Phalcon Auth - Guard-Based Authentication",
             "keywords": [
                 "Phalcon Auth",
                 "auth",
@@ -50,9 +50,9 @@
             ],
             "support": {
                 "issues": "https://github.com/sinbadxiii/phalcon-auth/issues",
-                "source": "https://github.com/sinbadxiii/phalcon-auth/tree/v1.1.0"
+                "source": "https://github.com/sinbadxiii/phalcon-auth/tree/v1.4.1"
             },
-            "time": "2021-03-16T09:53:50+00:00"
+            "time": "2021-09-24T10:14:35+00:00"
         },
         {
             "name": "sinbadxiii/phalcon-throttle",
@@ -60,12 +60,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sinbadxiii/phalcon-throttle.git",
-                "reference": "53ef0c2a3b02bc975e66f6f7d92b2182ab5157b9"
+                "reference": "922bf856c249fedabcd3d8978198ca4fca515caf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sinbadxiii/phalcon-throttle/zipball/53ef0c2a3b02bc975e66f6f7d92b2182ab5157b9",
-                "reference": "53ef0c2a3b02bc975e66f6f7d92b2182ab5157b9",
+                "url": "https://api.github.com/repos/sinbadxiii/phalcon-throttle/zipball/922bf856c249fedabcd3d8978198ca4fca515caf",
+                "reference": "922bf856c249fedabcd3d8978198ca4fca515caf",
                 "shasum": ""
             },
             "require": {
@@ -99,9 +99,9 @@
             ],
             "support": {
                 "issues": "https://github.com/sinbadxiii/phalcon-throttle/issues",
-                "source": "https://github.com/sinbadxiii/phalcon-throttle/tree/master"
+                "source": "https://github.com/sinbadxiii/phalcon-throttle/tree/v1.0.0"
             },
-            "time": "2021-03-12T09:05:04+00:00"
+            "time": "2021-09-17T10:01:45+00:00"
         }
     ],
     "packages-dev": [

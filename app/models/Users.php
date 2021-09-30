@@ -4,7 +4,7 @@ use Phalcon\Validation;
 use Phalcon\Validation\Validator\Email as EmailValidator;
 use Sinbadxiii\PhalconAuth\RememberToken\RememberingInterface;
 use Sinbadxiii\PhalconAuth\RememberToken\RememberTokenModel;
-use Sinbadxiii\PhalconAuth\User\AuthenticatableInterface;
+use Sinbadxiii\PhalconAuth\Contracts\AuthenticatableInterface;
 
 class Users extends \Phalcon\Mvc\Model implements AuthenticatableInterface, RememberingInterface
 {
