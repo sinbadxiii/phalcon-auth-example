@@ -115,7 +115,8 @@ class Users extends \Phalcon\Mvc\Model implements AuthenticatableInterface, Reme
     /**
      * @return RememberTokenModel
      */
-    public function getRememberToken(): RememberTokenterface
+    public function getRememberToken()
+        
     {
         return $this->remember_token;
     }

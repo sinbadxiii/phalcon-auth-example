@@ -71,7 +71,8 @@ class LoginController extends ControllerBase implements Accessicate
         $this->auth->logout();
 
         return $this->response->redirect(
-            $this->url->get(['for' => 'login'], true)
+            "/login", true
+
         );
     }
 
