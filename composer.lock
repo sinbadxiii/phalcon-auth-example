@@ -12,16 +12,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sinbadxiii/phalcon-auth.git",
-                "reference": "de364063fc7dc842330974e4798baa3bcbbd085f"
+                "reference": "85d26dfb00a890008fe97eb580edb65c50433c2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sinbadxiii/phalcon-auth/zipball/de364063fc7dc842330974e4798baa3bcbbd085f",
-                "reference": "de364063fc7dc842330974e4798baa3bcbbd085f",
+                "url": "https://api.github.com/repos/sinbadxiii/phalcon-auth/zipball/85d26dfb00a890008fe97eb580edb65c50433c2e",
+                "reference": "85d26dfb00a890008fe97eb580edb65c50433c2e",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4 || ^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.4",
+                "phpunit/phpunit": "^9.5"
             },
             "default-branch": true,
             "type": "library",
@@ -50,9 +54,9 @@
             ],
             "support": {
                 "issues": "https://github.com/sinbadxiii/phalcon-auth/issues",
-                "source": "https://github.com/sinbadxiii/phalcon-auth/tree/v1.4.1"
+                "source": "https://github.com/sinbadxiii/phalcon-auth/tree/v1.5.0"
             },
-            "time": "2021-09-24T10:14:35+00:00"
+            "time": "2021-10-01T07:35:38+00:00"
         },
         {
             "name": "sinbadxiii/phalcon-throttle",
@@ -174,5 +178,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
