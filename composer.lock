@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "880ff598056b3746eb4c51ffcf670dc9",
+    "content-hash": "c9924ef5bd72fe2de555acb06f845850",
     "packages": [
         {
             "name": "sinbadxiii/phalcon-auth",
-            "version": "dev-master",
+            "version": "v1.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sinbadxiii/phalcon-auth.git",
-                "reference": "fc7c9eab3e44f49bf2d4e987296cd4ddc54eb0fd"
+                "reference": "6969faa97566b04c74fe1e0a41fb9eed031de40b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sinbadxiii/phalcon-auth/zipball/fc7c9eab3e44f49bf2d4e987296cd4ddc54eb0fd",
-                "reference": "fc7c9eab3e44f49bf2d4e987296cd4ddc54eb0fd",
+                "url": "https://api.github.com/repos/sinbadxiii/phalcon-auth/zipball/6969faa97566b04c74fe1e0a41fb9eed031de40b",
+                "reference": "6969faa97566b04c74fe1e0a41fb9eed031de40b",
                 "shasum": ""
             },
             "require": {
@@ -27,7 +27,6 @@
                 "mockery/mockery": "^1.4",
                 "phpunit/phpunit": "^9.5"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -54,9 +53,9 @@
             ],
             "support": {
                 "issues": "https://github.com/sinbadxiii/phalcon-auth/issues",
-                "source": "https://github.com/sinbadxiii/phalcon-auth/tree/v1.5.1"
+                "source": "https://github.com/sinbadxiii/phalcon-auth/tree/v1.5.5"
             },
-            "time": "2021-10-01T07:47:24+00:00"
+            "time": "2021-10-08T04:37:48+00:00"
         },
         {
             "name": "sinbadxiii/phalcon-throttle",
@@ -171,7 +170,6 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "sinbadxiii/phalcon-throttle": 20,
-        "sinbadxiii/phalcon-auth": 20,
         "phalcon/ide-stubs": 5
     },
     "prefer-stable": false,
