@@ -1,6 +1,5 @@
 {
     "require": {
-        "sinbadxiii/phalcon-throttle": "dev-master",
         "sinbadxiii/phalcon-auth": "^v1.0.0"
     },
     "autoload": {

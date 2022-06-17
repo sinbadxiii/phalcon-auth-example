@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9924ef5bd72fe2de555acb06f845850",
+    "content-hash": "be55d0cdb3fbae3d09b8c41140242d08",
     "packages": [
         {
             "name": "sinbadxiii/phalcon-auth",
-            "version": "v1.5.5",
+            "version": "v1.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sinbadxiii/phalcon-auth.git",
-                "reference": "6969faa97566b04c74fe1e0a41fb9eed031de40b"
+                "reference": "d9427c9efbf0cdba328ba198ce87d460eef50afb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sinbadxiii/phalcon-auth/zipball/6969faa97566b04c74fe1e0a41fb9eed031de40b",
-                "reference": "6969faa97566b04c74fe1e0a41fb9eed031de40b",
+                "url": "https://api.github.com/repos/sinbadxiii/phalcon-auth/zipball/d9427c9efbf0cdba328ba198ce87d460eef50afb",
+                "reference": "d9427c9efbf0cdba328ba198ce87d460eef50afb",
                 "shasum": ""
             },
             "require": {
@@ -53,58 +53,9 @@
             ],
             "support": {
                 "issues": "https://github.com/sinbadxiii/phalcon-auth/issues",
-                "source": "https://github.com/sinbadxiii/phalcon-auth/tree/v1.5.5"
+                "source": "https://github.com/sinbadxiii/phalcon-auth/tree/v1.6.4"
             },
-            "time": "2021-10-08T04:37:48+00:00"
-        },
-        {
-            "name": "sinbadxiii/phalcon-throttle",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sinbadxiii/phalcon-throttle.git",
-                "reference": "922bf856c249fedabcd3d8978198ca4fca515caf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sinbadxiii/phalcon-throttle/zipball/922bf856c249fedabcd3d8978198ca4fca515caf",
-                "reference": "922bf856c249fedabcd3d8978198ca4fca515caf",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.2.5 || ^8.0"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Sinbadxiii\\PhalconThrottle\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sergey Mukhin",
-                    "email": "sinbadxiii@gmail.com"
-                }
-            ],
-            "description": "Throttle For Phalcon",
-            "keywords": [
-                "framework",
-                "phalcon",
-                "phalcon rate limit",
-                "phalcon throttle",
-                "ratelimit",
-                "throttle"
-            ],
-            "support": {
-                "issues": "https://github.com/sinbadxiii/phalcon-throttle/issues",
-                "source": "https://github.com/sinbadxiii/phalcon-throttle/tree/v1.0.0"
-            },
-            "time": "2021-09-17T10:01:45+00:00"
+            "time": "2022-05-30T08:23:20+00:00"
         }
     ],
     "packages-dev": [
@@ -169,12 +120,11 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "sinbadxiii/phalcon-throttle": 20,
         "phalcon/ide-stubs": 5
     },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }

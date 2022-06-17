@@ -8,11 +8,6 @@ class RegisterController extends ControllerBase
 {
     protected bool $authAccess = false;
 
-    public function authAccess(): bool
-    {
-        return $this->authAccess;
-    }
-
     public function registerFormAction()
     {
         $this->view->pick('register/registerForm');
