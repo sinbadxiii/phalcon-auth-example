@@ -1,3 +1,4 @@
 vendor
 .phalcon
 .idea
+cache/*.php
