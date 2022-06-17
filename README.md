@@ -10,3 +10,7 @@ the user credentials in the users table
 
 email: 1234@1234.ru
 password: 12344321
+
+## Demo
+
+![Banner](https://github.com/sinbadxiii/images/blob/master/phalcon-auth-example/process.gif?raw=true)
