@@ -8,6 +8,7 @@
               "App\\": "src/"
         }
     },
+
     "require-dev": {
         "phalcon/ide-stubs": "^v5.0.0-rc1"
     }

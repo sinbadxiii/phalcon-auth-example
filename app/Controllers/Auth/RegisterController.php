@@ -2,11 +2,17 @@
 
 declare(strict_types=1);
 
-use Phalcon\Mvc\Controller;
+namespace App\Controllers\Auth;
+
+use App\Controllers\ControllerBase;
+use App\Models\Users;
 
 class RegisterController extends ControllerBase
 {
-    protected bool $authAccess = false;
+    public function onConstruct()
+    {
+        $this->auth->access("guest");
+    }
 
     public function registerFormAction()
     {
@@ -22,11 +28,11 @@ class RegisterController extends ControllerBase
             'email' => $this->request->getPost("email"),
             'password' => $this->request->getPost("password"),
         ]);
-        $user->save();
+        if ($user->save()) {
+            $this->auth->login($user);
+        }
 
-        $this->auth->login($user);
-
-        return  $this->response->redirect("/");
+        return $this->response->redirect("/");
     }
 }
 

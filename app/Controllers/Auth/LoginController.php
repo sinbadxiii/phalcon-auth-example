@@ -2,12 +2,17 @@
 
 declare(strict_types=1);
 
-use Phalcon\Helper\Str;
-use Sinbadxiii\PhalconThrottle\RateLimiter;
+namespace App\Controllers\Auth;
+
+use App\Controllers\ControllerBase;
 
 class LoginController extends ControllerBase
 {
-    protected bool $authAccess = false;
+    public function onConstruct()
+    {
+        //except actions "logout" from guest access
+        $this->auth->access("guest")->except("logout");
+    }
 
     public function loginFormAction()
     {
@@ -42,13 +47,13 @@ class LoginController extends ControllerBase
 
         return $this->response->redirect(
             "/login", true
-
         );
     }
 
     private function attemptLogin()
     {
         $remember = $this->request->getPost('remember') ? true : false;
+
         return $this->auth->attempt($this->credentials(), $remember);
     }
 

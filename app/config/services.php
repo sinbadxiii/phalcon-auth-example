@@ -2,9 +2,9 @@
 declare(strict_types=1);
 
 use App\Security\Authenticate;
-use Phalcon\Cache;
+use Phalcon\Cache\Cache;
 use Phalcon\Cache\AdapterFactory;
-use Phalcon\Escaper;
+use Phalcon\Html\Escaper;
 use Phalcon\Flash\Direct as Flash;
 use Phalcon\Http\Response\Cookies;
 use Phalcon\Mvc\Dispatcher;
@@ -12,12 +12,12 @@ use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\View\Engine\Php as PhpEngine;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
-use Phalcon\Security;
+use Phalcon\Encryption\Security;
 use Phalcon\Session\Adapter\Stream as SessionAdapter;
 use Phalcon\Session\Manager as SessionManager;
 use Phalcon\Storage\SerializerFactory;
-use Phalcon\Url as UrlResolver;
-use Sinbadxiii\PhalconAuth\Auth;
+use Phalcon\Mvc\Url as UrlResolver;
+use Sinbadxiii\PhalconAuth\Manager;
 
 
 $di->setShared('dispatcher', function () use ($di) {
@@ -132,9 +132,7 @@ $di->set('flash', function () {
  */
 $di->setShared('session', function () {
     $session = new SessionManager();
-    $files = new SessionAdapter([
-        'savePath' => sys_get_temp_dir(),
-    ]);
+    $files = new SessionAdapter();
     $session->setAdapter($files);
     $session->start();
 
@@ -158,7 +156,24 @@ $di->setShared("cache", function () {
 });
 
 $di->setShared("auth", function () {
-    return new Auth();
+    $authManager =  new Manager();
+
+    $configAuth = $this->getConfig()->auth;
+    $hasher     = $this->getSecurity();
+
+    var_dump($configAuth);exit;
+    $authManager->setProvider(
+        "mongo", function () {
+
+
+
+        return new \Sinbadxiii\PhalconAuth\Guards\TokenGuard(
+            $this->getSecurity(), $this->getConfig()->auth->providers
+        );
+        }
+    );
+
+    return $authManager;
 });
 
 $di->set("security", function ()  use ($di) {

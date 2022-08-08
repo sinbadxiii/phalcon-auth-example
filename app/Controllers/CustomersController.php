@@ -1,0 +1,23 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Controllers;
+
+class CustomersController extends ControllerBase
+{
+    public function onConstruct()
+    {
+        //except actions "reports" from auth access
+        $this->auth->access("auth")->except("reports");
+    }
+
+    public function indexAction()
+    {
+    }
+
+    public function reportsAction()
+    {
+    }
+}
+

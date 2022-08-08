@@ -2,7 +2,7 @@
 
 | Phalcon 3 | Phalcon 4 | Phalcon 5
  :-------------| :-------------| :-------------
-| :x: |  :heavy_check_mark: | :heavy_check_mark:
+| :x: |  :x: | :heavy_check_mark:
 
 run `composer install`
 
