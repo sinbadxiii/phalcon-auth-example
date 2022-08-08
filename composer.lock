@@ -4,77 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "be55d0cdb3fbae3d09b8c41140242d08",
-    "packages": [
-        {
-            "name": "sinbadxiii/phalcon-auth",
-            "version": "v1.6.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sinbadxiii/phalcon-auth.git",
-                "reference": "d9427c9efbf0cdba328ba198ce87d460eef50afb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sinbadxiii/phalcon-auth/zipball/d9427c9efbf0cdba328ba198ce87d460eef50afb",
-                "reference": "d9427c9efbf0cdba328ba198ce87d460eef50afb",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.4 || ^8.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.4",
-                "phpunit/phpunit": "^9.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Sinbadxiii\\PhalconAuth\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sergey Mukhin",
-                    "email": "sinbadxiii@gmail.com"
-                }
-            ],
-            "description": "Phalcon Auth - Guard-Based Authentication",
-            "keywords": [
-                "Phalcon Auth",
-                "auth",
-                "authorization",
-                "framework",
-                "phalcon"
-            ],
-            "support": {
-                "issues": "https://github.com/sinbadxiii/phalcon-auth/issues",
-                "source": "https://github.com/sinbadxiii/phalcon-auth/tree/v1.6.4"
-            },
-            "time": "2022-05-30T08:23:20+00:00"
-        }
-    ],
+    "content-hash": "26566239af7d82d89de227323a13bb99",
+    "packages": [],
     "packages-dev": [
         {
             "name": "phalcon/ide-stubs",
-            "version": "v4.0.0-rc.3",
+            "version": "v5.0.0-RC1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phalcon/ide-stubs.git",
-                "reference": "51c9b7c331916d46d1f1e1481d6e68a7d712e780"
+                "reference": "e0dcfc28b324ec3fdfd06f1f3a7a34a7411c520d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phalcon/ide-stubs/zipball/51c9b7c331916d46d1f1e1481d6e68a7d712e780",
-                "reference": "51c9b7c331916d46d1f1e1481d6e68a7d712e780",
+                "url": "https://api.github.com/repos/phalcon/ide-stubs/zipball/e0dcfc28b324ec3fdfd06f1f3a7a34a7411c520d",
+                "reference": "e0dcfc28b324ec3fdfd06f1f3a7a34a7411c520d",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2.0"
+                "php": ">=7.4"
             },
             "require-dev": {
                 "squizlabs/php_codesniffer": "3.*",
@@ -88,8 +36,8 @@
             "authors": [
                 {
                     "name": "Phalcon Team",
-                    "email": "team@phalconphp.com",
-                    "homepage": "https://phalconphp.com/en/team"
+                    "email": "team@phalcon.io",
+                    "homepage": "https://phalcon.io/en-us/team"
                 },
                 {
                     "name": "Contributors",
@@ -97,7 +45,7 @@
                 }
             ],
             "description": "The most complete Phalcon Framework IDE stubs library which enables autocompletion in modern IDEs.",
-            "homepage": "https://phalconphp.com",
+            "homepage": "https://phalcon.io",
             "keywords": [
                 "Devtools",
                 "Eclipse",
@@ -110,11 +58,21 @@
                 "stubs"
             ],
             "support": {
-                "forum": "https://forum.phalconphp.com/",
+                "forum": "https://forum.phalcon.io/",
                 "issues": "https://github.com/phalcon/ide-stubs/issues",
                 "source": "https://github.com/phalcon/ide-stubs"
             },
-            "time": "2019-11-18T13:10:29+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/phalcon",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/phalcon",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2022-05-31T21:28:02+00:00"
         }
     ],
     "aliases": [],

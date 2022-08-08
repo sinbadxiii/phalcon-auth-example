@@ -2,3 +2,4 @@ vendor
 .phalcon
 .idea
 cache/*.php
+app/packages/*
