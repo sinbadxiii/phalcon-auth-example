@@ -1,14 +1,17 @@
 <?php
 
-use Phalcon\Di;
-use Phalcon\Validation;
-use Phalcon\Validation\Validator\Email as EmailValidator;
-use Sinbadxiii\PhalconAuth\Contracts\RememberingInterface;
-use Sinbadxiii\PhalconAuth\RememberToken\RememberTokenModel;
-use Sinbadxiii\PhalconAuth\Contracts\AuthenticatableInterface;
-use Sinbadxiii\PhalconAuth\Contracts\RememberTokenInterface;
+namespace App\Models;
 
-class Users extends \Phalcon\Mvc\Model implements AuthenticatableInterface, RememberingInterface
+use Phalcon\Di\Di;
+use Phalcon\Mvc\Model;
+use Phalcon\Filter\Validation;
+use Phalcon\Filter\Validation\Validator\Email as EmailValidator;
+use Sinbadxiii\PhalconAuth\RememberToken\RememberingInterface;
+use Sinbadxiii\PhalconAuth\RememberToken\RememberTokenModel;
+use Sinbadxiii\PhalconAuth\AuthenticatableInterface;
+use Sinbadxiii\PhalconAuth\RememberToken\RememberTokenInterface;
+
+class Users extends Model implements AuthenticatableInterface, RememberingInterface
 {
     /**
      *

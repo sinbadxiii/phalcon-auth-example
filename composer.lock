@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "be55d0cdb3fbae3d09b8c41140242d08",
+    "content-hash": "699cd33f4741345e95c2594327a56f27",
     "packages": [
         {
             "name": "sinbadxiii/phalcon-auth",
@@ -61,20 +61,20 @@
     "packages-dev": [
         {
             "name": "phalcon/ide-stubs",
-            "version": "v4.0.0-rc.3",
+            "version": "v5.0.0-RC1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phalcon/ide-stubs.git",
-                "reference": "51c9b7c331916d46d1f1e1481d6e68a7d712e780"
+                "reference": "e0dcfc28b324ec3fdfd06f1f3a7a34a7411c520d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phalcon/ide-stubs/zipball/51c9b7c331916d46d1f1e1481d6e68a7d712e780",
-                "reference": "51c9b7c331916d46d1f1e1481d6e68a7d712e780",
+                "url": "https://api.github.com/repos/phalcon/ide-stubs/zipball/e0dcfc28b324ec3fdfd06f1f3a7a34a7411c520d",
+                "reference": "e0dcfc28b324ec3fdfd06f1f3a7a34a7411c520d",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2.0"
+                "php": ">=7.4"
             },
             "require-dev": {
                 "squizlabs/php_codesniffer": "3.*",
@@ -88,8 +88,8 @@
             "authors": [
                 {
                     "name": "Phalcon Team",
-                    "email": "team@phalconphp.com",
-                    "homepage": "https://phalconphp.com/en/team"
+                    "email": "team@phalcon.io",
+                    "homepage": "https://phalcon.io/en-us/team"
                 },
                 {
                     "name": "Contributors",
@@ -97,7 +97,7 @@
                 }
             ],
             "description": "The most complete Phalcon Framework IDE stubs library which enables autocompletion in modern IDEs.",
-            "homepage": "https://phalconphp.com",
+            "homepage": "https://phalcon.io",
             "keywords": [
                 "Devtools",
                 "Eclipse",
@@ -110,11 +110,21 @@
                 "stubs"
             ],
             "support": {
-                "forum": "https://forum.phalconphp.com/",
+                "forum": "https://forum.phalcon.io/",
                 "issues": "https://github.com/phalcon/ide-stubs/issues",
                 "source": "https://github.com/phalcon/ide-stubs"
             },
-            "time": "2019-11-18T13:10:29+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/phalcon",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/phalcon",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2022-05-31T21:28:02+00:00"
         }
     ],
     "aliases": [],
@@ -126,5 +136,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.1.0"
 }

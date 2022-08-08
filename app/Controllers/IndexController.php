@@ -2,13 +2,12 @@
 
 declare(strict_types=1);
 
+namespace App\Controllers;
+
 class IndexController extends ControllerBase
 {
-    protected bool $authAccess = false;
-
     public function indexAction()
     {
-
     }
 }
 

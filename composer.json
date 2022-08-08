@@ -7,7 +7,7 @@
             "App\\": "app/"
         }
     },
-    "require-dev": {
-        "phalcon/ide-stubs": "v4.0.0-rc.3"
+    "require-deav": {
+        "phalcon/ide-stubs": "v5.0.0-rc.1"
     }
 }

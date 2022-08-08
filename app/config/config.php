@@ -7,18 +7,19 @@
 defined('BASE_PATH') || define('BASE_PATH', getenv('BASE_PATH') ?: realpath(dirname(__FILE__) . '/../..'));
 defined('APP_PATH') || define('APP_PATH', BASE_PATH . '/app');
 
-return new \Phalcon\Config([
+return new \Phalcon\Config\Config([
     'database' => [
         'adapter'     => 'Mysql',
         'host'        => 'localhost',
         'username'    => 'root',
-        'password'    => '1993',
+        'password'    => '1',
         'dbname'      => 'auth-test',
         'charset'     => 'utf8',
     ],
     'application' => [
         'appDir'         => APP_PATH . '/',
-        'controllersDir' => APP_PATH . '/controllers/',
+        'controllersDir' => APP_PATH . '/Controllers/',
+
         'modelsDir'      => APP_PATH . '/models/',
         'migrationsDir'  => APP_PATH . '/migrations/',
         'viewsDir'       => APP_PATH . '/views/',
@@ -33,8 +34,7 @@ return new \Phalcon\Config([
     ],
     'auth' => [
         'defaults' => [
-            'guard' => 'web',
-            'passwords' => 'users',
+            'guard' => 'web'
         ],
 
         'guards' => [
@@ -45,13 +45,23 @@ return new \Phalcon\Config([
         ],
         'providers' => [
             'users' => [
-                'driver' => 'model',
-                'model'  => \Users::class,
+                'driver' => 'mongo',
+                'model'  => App\Models\Users::class,
+
+//                'driver' => 'memory',
+//                'data'   => [
+//                    0 => ["id" => 0, "name" => "admin", 'password' => 'admin', "email" => "admin@admin.ru"],
+//                    1 => ["id" => 1, "name" => "admin1", 'password' => 'admin1', "email" => "admin1@admin.ru"],
+//                ],
+
+//                'driver' => 'file',
+//                'path'   => __DIR__ . "/users.json",
             ],
         ],
-        'hash' => [
-            'method' => 'sha1'
-        ],
+        'access' => [
+            'auth'  => App\Security\Access\Auth::class,
+            'guest' => App\Security\Access\Guest::class
+        ]
     ],
     'cache' => [
         'default' => 'redis',

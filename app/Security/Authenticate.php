@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Security;
 
-use Sinbadxiii\PhalconAuth\Middlewares\Authenticate as AuthMiddleware;
+use Sinbadxiii\PhalconAuth\Middleware\Authenticate as AuthMiddleware;
 
 /**
  * Class Authenticate
@@ -12,13 +12,4 @@ use Sinbadxiii\PhalconAuth\Middlewares\Authenticate as AuthMiddleware;
  */
 class Authenticate extends AuthMiddleware
 {
-    /**
-     * @return \Phalcon\Http\ResponseInterface|void
-     */
-    protected function redirectTo()
-    {
-        if (isset($this->response)) {
-            $this->response->redirect("/login")->send();
-        }
-    }
 }
