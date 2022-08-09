@@ -2,7 +2,7 @@
 
 namespace App\Security\Access;
 
-use Sinbadxiii\PhalconAuth\Access\AuthAccess;
+use Sinbadxiii\PhalconAuth\Access\Auth as AuthAccess;;
 
 class Auth extends AuthAccess
 {
