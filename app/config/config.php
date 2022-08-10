@@ -45,9 +45,8 @@ return new \Phalcon\Config\Config([
         ],
         'providers' => [
             'users' => [
-                'driver' => 'mongo',
+                'adapter' => 'model',
                 'model'  => App\Models\Users::class,
-
 //                'driver' => 'memory',
 //                'data'   => [
 //                    0 => ["id" => 0, "name" => "admin", 'password' => 'admin', "email" => "admin@admin.ru"],

@@ -158,20 +158,18 @@ $di->setShared("cache", function () {
 $di->setShared("auth", function () {
     $authManager =  new Manager();
 
-    $configAuth = $this->getConfig()->auth;
-    $hasher     = $this->getSecurity();
-
-    var_dump($configAuth);exit;
-    $authManager->setProvider(
-        "mongo", function () {
-
-
-
-        return new \Sinbadxiii\PhalconAuth\Guards\TokenGuard(
-            $this->getSecurity(), $this->getConfig()->auth->providers
-        );
-        }
-    );
+//    $configAuth = $this->getConfig()->auth;
+//    $hasher     = $this->getSecurity();
+//
+//    $authManager->setProvider(
+//        "mongo", function () {
+//
+//
+//        return new \Sinbadxiii\PhalconAuth\Guard\TokenGuard(
+//            $this->getSecurity(), $this->getConfig()->auth->providers
+//        );
+//        }
+//    );
 
     return $authManager;
 });

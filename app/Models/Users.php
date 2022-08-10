@@ -6,10 +6,9 @@ use Phalcon\Di\Di;
 use Phalcon\Mvc\Model;
 use Phalcon\Filter\Validation;
 use Phalcon\Filter\Validation\Validator\Email as EmailValidator;
-use Sinbadxiii\PhalconAuth\RememberToken\RememberingInterface;
-use Sinbadxiii\PhalconAuth\RememberToken\RememberTokenModel;
+use Sinbadxiii\PhalconAuth\RememberingInterface;
 use Sinbadxiii\PhalconAuth\AuthenticatableInterface;
-use Sinbadxiii\PhalconAuth\RememberToken\RememberTokenInterface;
+use Sinbadxiii\PhalconAuth\RememberTokenInterface;
 
 class Users extends Model implements AuthenticatableInterface, RememberingInterface
 {
@@ -92,7 +91,7 @@ class Users extends Model implements AuthenticatableInterface, RememberingInterf
 
         $this->hasOne(
             'id',
-            RememberTokenModel::class,
+            RememberToken::class,
             'user_id',
             [
                 'alias' => "remember_token"
@@ -142,4 +141,20 @@ class Users extends Model implements AuthenticatableInterface, RememberingInterf
         $this->remember_token = $value;
     }
 
+    public function createRememberToken(): ?RememberTokenInterface
+    {
+        $random = new \Phalcon\Encryption\Security\Random();
+
+        $token = $random->base64(60);
+
+        $rememberToken = new RememberToken();
+        $rememberToken->token = $token;
+        $rememberToken->user_agent = Di::getDefault()->get('request')->getUserAgent();
+        $rememberToken->ip = Di::getDefault()->get('request')->getClientAddress();
+
+        $this->setRememberToken($rememberToken);
+        $this->save();
+
+        return $rememberToken;
+    }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Security\Access;
 
-use Sinbadxiii\PhalconAuth\Access\GuestAccess;
+use Sinbadxiii\PhalconAuth\Access\Guest as GuestAccess;
 
 class Guest extends GuestAccess
 {
