@@ -12,7 +12,7 @@ return new \Phalcon\Config\Config([
         'adapter'     => 'Mysql',
         'host'        => 'localhost',
         'username'    => 'root',
-        'password'    => '1',
+        'password'    => '1993',
         'dbname'      => 'auth-test',
         'charset'     => 'utf8',
     ],
@@ -46,20 +46,16 @@ return new \Phalcon\Config\Config([
         'providers' => [
             'users' => [
                 'adapter' => 'model',
-                'model'  => App\Models\Users::class,
-//                'driver' => 'memory',
+                'model'  => App\Models\User::class,
+//                'adapter' => 'memory',
 //                'data'   => [
 //                    0 => ["id" => 0, "name" => "admin", 'password' => 'admin', "email" => "admin@admin.ru"],
 //                    1 => ["id" => 1, "name" => "admin1", 'password' => 'admin1', "email" => "admin1@admin.ru"],
 //                ],
 
-//                'driver' => 'file',
-//                'path'   => __DIR__ . "/users.json",
+//                'adapter' => 'stream',
+//                'src'   => __DIR__ . "/users.json",
             ],
-        ],
-        'access' => [
-            'auth'  => App\Security\Access\Auth::class,
-            'guest' => App\Security\Access\Guest::class
         ]
     ],
     'cache' => [

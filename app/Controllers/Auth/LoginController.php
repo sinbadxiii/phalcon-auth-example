@@ -29,7 +29,7 @@ class LoginController extends ControllerBase
 
     protected function succesLogin()
     {
-        return $this->response->redirect("/admin");
+        return $this->response->redirect("/profile");
     }
 
     private function failLogin()

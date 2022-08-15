@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Phalcon\Di\Di;
+use Phalcon\Encryption\Security\Random;
 use Phalcon\Mvc\Model;
 use Phalcon\Filter\Validation;
 use Phalcon\Filter\Validation\Validator\Email as EmailValidator;
@@ -10,7 +11,7 @@ use Sinbadxiii\PhalconAuth\RememberingInterface;
 use Sinbadxiii\PhalconAuth\AuthenticatableInterface;
 use Sinbadxiii\PhalconAuth\RememberTokenInterface;
 
-class Users extends Model implements AuthenticatableInterface, RememberingInterface
+class User extends Model implements AuthenticatableInterface, RememberingInterface
 {
     /**
      *
@@ -141,9 +142,9 @@ class Users extends Model implements AuthenticatableInterface, RememberingInterf
         $this->remember_token = $value;
     }
 
-    public function createRememberToken(): ?RememberTokenInterface
+    public function createRememberToken(): RememberTokenInterface
     {
-        $random = new \Phalcon\Encryption\Security\Random();
+        $random = new Random();
 
         $token = $random->base64(60);
 

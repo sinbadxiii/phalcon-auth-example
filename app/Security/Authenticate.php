@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace App\Security;
 
-use Sinbadxiii\PhalconAuth\Middleware\Authenticate as AuthMiddleware;
+use App\Security\Access\Auth;
+use App\Security\Access\AuthWithBasic;
+use App\Security\Access\Guest;
+use Sinbadxiii\PhalconAuth\Access\Authenticate as AuthMiddleware;
 
 /**
  * Class Authenticate
@@ -12,4 +15,9 @@ use Sinbadxiii\PhalconAuth\Middleware\Authenticate as AuthMiddleware;
  */
 class Authenticate extends AuthMiddleware
 {
+    protected array $accessList = [
+        'auth'   => Auth::class,
+        'guest'  => Guest::class,
+        'basic'  => AuthWithBasic::class,
+    ];
 }

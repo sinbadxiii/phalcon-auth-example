@@ -1,15 +1,15 @@
 {
-    "require": {
-    },
     "autoload": {
         "psr-4": {
-              "Sinbadxiii\\PhalconAuth\\": "src/packages/sinbadxiii/phalcon-auth/src/",
-              "Sinbadxiii\\PhalconAuth\\Tests\\": "src/packages/sinbadxiii/phalcon-auth/tests/",
-              "App\\": "src/"
+              "Sinbadxiii\\PhalconAuth\\": "app/packages/sinbadxiii/phalcon-auth/src/",
+              "Sinbadxiii\\PhalconAuth\\Tests\\": "app/packages/sinbadxiii/phalcon-auth/tests/",
+              "App\\": "app/"
         }
     },
 
     "require-dev": {
-        "phalcon/ide-stubs": "^v5.0.0-rc1"
+      "phalcon/ide-stubs": "^v5.0.0-rc1",
+      "phpstan/phpstan": "^1.8",
+      "phpunit/phpunit": "^9.5"
     }
 }
