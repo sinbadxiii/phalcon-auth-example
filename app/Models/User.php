@@ -11,6 +11,8 @@ use Sinbadxiii\PhalconAuth\RememberingInterface;
 use Sinbadxiii\PhalconAuth\AuthenticatableInterface;
 use Sinbadxiii\PhalconAuth\RememberTokenInterface;
 
+use function date;
+
 class User extends Model implements AuthenticatableInterface, RememberingInterface
 {
     /**
@@ -23,43 +25,41 @@ class User extends Model implements AuthenticatableInterface, RememberingInterfa
      *
      * @var string
      */
-    public $username;
+    public string $username;
 
     /**
      *
      * @var string
      */
-    public $name;
+    public string $name;
 
     /**
      *
      * @var string
      */
-    public $email;
+    public string $email;
 
     /**
      *
      * @var string
      */
-    public $password;
+    public string $password;
 
     /**
      *
-     * @var string
+     * @var integer
      */
     public $published;
 
     /**
-     *
-     * @var string
+     * @var string|null
      */
-    public $created_at;
+    public ?string $created_at;
 
     /**
-     *
-     * @var string
+     * @var string|null
      */
-    public $updated_at;
+    public ?string $updated_at;
 
     /**
      * Validations and business logic
@@ -100,16 +100,17 @@ class User extends Model implements AuthenticatableInterface, RememberingInterfa
         );
     }
 
-    public function setPassword(string $password)
+    public function setPassword(string $password): static
     {
         $this->password = Di::getDefault()->getShared("security")->hash($password);
+
         return $this;
     }
 
     /**
      * @return int
      */
-    public function getAuthIdentifier()
+    public function getAuthIdentifier(): mixed
     {
         return $this->id;
     }
@@ -117,7 +118,7 @@ class User extends Model implements AuthenticatableInterface, RememberingInterfa
     /**
      * @return string
      */
-    public function getAuthPassword()
+    public function getAuthPassword(): string
     {
         return $this->password;
     }
@@ -157,5 +158,22 @@ class User extends Model implements AuthenticatableInterface, RememberingInterfa
         $this->save();
 
         return $rememberToken;
+    }
+
+
+    public function beforeValidationOnCreate()
+    {
+        $this->created_at = date(DATE_ATOM);
+        $this->updated_at = date(DATE_ATOM);
+    }
+
+    public function beforeValidationOnSave()
+    {
+        $this->updated_at = date(DATE_ATOM);
+    }
+
+    public function beforeValidationOnUpdate()
+    {
+        $this->updated_at = date(DATE_ATOM);
     }
 }

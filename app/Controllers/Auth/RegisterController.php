@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Controllers\Auth;
 
 use App\Controllers\ControllerBase;
-use App\Models\Users;
+use App\Models\User;
 
 class RegisterController extends ControllerBase
 {
@@ -21,7 +21,7 @@ class RegisterController extends ControllerBase
 
     public function registerAction()
     {
-        $user = new Users();
+        $user = new User();
         $user->assign([
             'name' => $this->request->getPost("name"),
             'username' => $this->request->getPost("username"),
