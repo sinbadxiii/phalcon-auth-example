@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Models;
 
 use Phalcon\Mvc\Model;
-use Sinbadxiii\PhalconAuth\RememberTokenInterface;
+use Phalcon\Auth\RememberTokenInterface;
 
 class RememberToken extends Model implements  RememberTokenInterface
 {

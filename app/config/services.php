@@ -17,7 +17,7 @@ use Phalcon\Session\Adapter\Stream as SessionAdapter;
 use Phalcon\Session\Manager as SessionManager;
 use Phalcon\Storage\SerializerFactory;
 use Phalcon\Mvc\Url as UrlResolver;
-use Sinbadxiii\PhalconAuth\Manager;
+use Phalcon\Auth\Manager;
 
 
 $di->setShared('dispatcher', function () use ($di) {
@@ -156,7 +156,16 @@ $di->setShared("cache", function () {
 });
 
 $di->setShared("auth", function () {
+
     $authManager =  new Manager();
+
+    //example extend custom guard and custom provider
+//    $authManager->addGuard("jwt", function($provider, $config, $name) {
+//        return new Phalcon\Auth\Guard\Session($provider, $config, $name);
+//    });
+//    $authManager->addProviderAdapter("mongo", function($security, $configProvider) {
+//        return new Phalcon\Auth\Adapter\Model($security, $configProvider);
+//    });
 
     return $authManager;
 });

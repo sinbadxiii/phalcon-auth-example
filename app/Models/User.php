@@ -7,9 +7,9 @@ use Phalcon\Encryption\Security\Random;
 use Phalcon\Mvc\Model;
 use Phalcon\Filter\Validation;
 use Phalcon\Filter\Validation\Validator\Email as EmailValidator;
-use Sinbadxiii\PhalconAuth\RememberingInterface;
-use Sinbadxiii\PhalconAuth\AuthenticatableInterface;
-use Sinbadxiii\PhalconAuth\RememberTokenInterface;
+use Phalcon\Auth\RememberingInterface;
+use Phalcon\Auth\AuthenticatableInterface;
+use Phalcon\Auth\RememberTokenInterface;
 
 use function date;
 

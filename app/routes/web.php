@@ -10,6 +10,8 @@ $router->setDefaults(['namespace' => 'App\Controllers']);
 $router->handle($_SERVER['REQUEST_URI']);
 
 $router->add("/profile", "profile::index")->setName("profile");
+$router->add("/profile/favorites", "profile::favorites")->setName("profile-favorites");
+
 $router->add("/basic", "basic::index")->setName("basic");
 
 $router->add("/customers", "customers::index")->setName("customers");

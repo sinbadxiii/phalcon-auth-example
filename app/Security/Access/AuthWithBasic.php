@@ -2,8 +2,8 @@
 
 namespace App\Security\Access;
 
-use Sinbadxiii\PhalconAuth\Access\AccessAbstract;
-use Sinbadxiii\PhalconAuth\Exception;
+use Phalcon\Auth\Access\AccessAbstract;
+use Phalcon\Auth\Exception;
 
 class AuthWithBasic extends AccessAbstract
 {
