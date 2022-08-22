@@ -39,13 +39,13 @@ return new \Phalcon\Config\Config([
 
         'guards' => [
             'web' => [
-                'driver' => 'jwt',
+                'driver' => 'session',
                 'provider' => 'users',
             ],
         ],
         'providers' => [
             'users' => [
-                'adapter' => 'mongo',
+                'adapter' => 'model',
                 'model'  => App\Models\User::class,
 //                'adapter' => 'memory',
 //                'data'   => [
