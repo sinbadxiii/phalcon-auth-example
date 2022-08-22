@@ -11,7 +11,7 @@ class RegisterController extends ControllerBase
 {
     public function onConstruct()
     {
-        $this->auth->access("guest");
+        $this->auth("guest");
     }
 
     public function registerFormAction()

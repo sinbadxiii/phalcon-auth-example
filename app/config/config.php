@@ -39,7 +39,7 @@ return new \Phalcon\Config\Config([
 
         'guards' => [
             'web' => [
-                'driver' => 'jopa',
+                'driver' => 'jwt',
                 'provider' => 'users',
             ],
         ],

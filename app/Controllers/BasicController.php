@@ -8,7 +8,7 @@ class BasicController extends ControllerBase
 {
     public function onConstruct()
     {
-        $this->auth->access("basic");
+        $this->auth("basic");
     }
 
     public function indexAction()
