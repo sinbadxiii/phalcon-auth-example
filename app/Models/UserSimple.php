@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Phalcon\Auth\AuthenticatableInterface;
+use Sinbadxiii\PhalconAuth\AuthenticatableInterface;
 
 class UserSimple implements AuthenticatableInterface
 {
