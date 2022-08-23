@@ -49,12 +49,14 @@ return new \Phalcon\Config\Config([
                 'model'  => App\Models\User::class,
 //                'adapter' => 'memory',
 //                'data'   => [
-//                    0 => ["id" => 0, "name" => "admin", 'password' => 'admin', "email" => "admin@admin.ru"],
-//                    1 => ["id" => 1, "name" => "admin1", 'password' => 'admin1', "email" => "admin1@admin.ru"],
+//                    0 => ["id" => 0, "name" => "admin", "username" => "admin", 'password' => 'admin', "email" => "admin@admin.ru"],
+//                    1 => ["id" => 1, "name" => "admin1","username" => "admin1", 'password' => 'admin1', "email" => "admin1@admin.ru"],
 //                ],
-
+//                'model'  => App\Models\UserSimple::class,
+//
 //                'adapter' => 'stream',
 //                'src'   => __DIR__ . "/users.json",
+//                'model'  => App\Models\UserSimple::class,
             ],
         ]
     ],
