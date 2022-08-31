@@ -17,7 +17,7 @@ use Phalcon\Session\Adapter\Stream as SessionAdapter;
 use Phalcon\Session\Manager as SessionManager;
 use Phalcon\Storage\SerializerFactory;
 use Phalcon\Mvc\Url as UrlResolver;
-use Sinbadxiii\PhalconAuth\Manager;
+use Sinbadxiii\PhalconAuth\ManagerFactory;
 
 
 $di->setShared('dispatcher', function () use ($di) {
@@ -156,7 +156,7 @@ $di->setShared("cache", function () {
 });
 
 $di->setShared("auth", function () {
-    $authManager =  new Manager();
+    $authManager =  new ManagerFactory();
 
     return $authManager;
 });
