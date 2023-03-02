@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Controllers\Auth;
+namespace App\Modules\Front\Controllers\Auth;
 
-use App\Controllers\ControllerBase;
 use App\Models\User;
+use App\Modules\Front\Controllers\ControllerBase;
 
 class RegisterController extends ControllerBase
 {

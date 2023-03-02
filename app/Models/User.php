@@ -176,4 +176,9 @@ class User extends Model implements AuthenticatableInterface, RememberingInterfa
     {
         $this->updated_at = date(DATE_ATOM);
     }
+
+    public function isAdmin()
+    {
+        return true;
+    }
 }

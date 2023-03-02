@@ -42,6 +42,19 @@ try {
      */
     $application = new \Phalcon\Mvc\Application($di);
 
+    $application->registerModules(
+        [
+            "front" => [
+                "className" => App\Modules\Front\Module::class,
+                'path'      => APP_PATH . '/Modules/Front/Module.php'
+            ],
+            "admin" => [
+                "className" => App\Modules\Admin\Module::class,
+                'path'      => APP_PATH . '/Modules/Admin/Module.php'
+            ]
+        ]
+    );
+
     echo $application->handle($_SERVER['REQUEST_URI'])->getContent();
 } catch (\Exception $e) {
     echo $e->getMessage() . '<br>';
