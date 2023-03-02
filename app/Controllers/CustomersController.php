@@ -9,7 +9,7 @@ class CustomersController extends ControllerBase
     public function onConstruct()
     {
         //except actions "reports" from auth access
-        $this->auth->access("auth")->except("reports");
+        $this->getDI()->getShared("auth")->access("auth")->except("reports");
     }
 
     public function indexAction()

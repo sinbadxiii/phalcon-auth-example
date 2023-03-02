@@ -9,7 +9,7 @@ class ProfileController extends ControllerBase
     public function onConstruct()
     {
         //full auth access
-        $this->auth->access("auth");
+        $this->getDI()->getShared("auth")->access("auth");
     }
 
     public function indexAction()

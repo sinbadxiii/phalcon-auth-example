@@ -11,7 +11,7 @@ class LoginController extends ControllerBase
     public function onConstruct()
     {
         //except actions "logout" from guest access
-        $this->auth->access("guest")->except("logout");
+        $this->getDI()->getShared("auth")->access("guest")->except("logout");
     }
 
     public function loginFormAction()
